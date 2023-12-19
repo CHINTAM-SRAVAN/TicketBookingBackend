@@ -1,5 +1,5 @@
 import bcyrpt from "bcryptjs";
-import Admin from "../models/Admin";
+import Admin from "../models/Admin.js";
 import jwt from "jsonwebtoken";
 
 export const getAllAdmins=async(req,res,next)=>{
