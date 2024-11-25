@@ -1,8 +1,8 @@
 import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
-import Movie from "../models/Movie";
-import Admin from "../models/Admin";
-import Bookings from "../models/Bookings";
+import Movie from "../models/Movie.js";
+import Admin from "../models/Admin.js";
+import Bookings from "../models/Bookings.js";
 
 export const getAllMovies=async(req,res,next)=>{
     let movies;
@@ -83,6 +83,7 @@ export const addMovie=async(req,res,next)=>{
         return res.status(201).json({movie})
 
 };
+
 export const getMovieById=async(req,res,next)=>{
     const id=req.params.id;
     let movie;

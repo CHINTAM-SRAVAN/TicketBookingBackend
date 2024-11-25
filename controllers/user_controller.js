@@ -1,5 +1,5 @@
-import Bookings from "../models/Bookings";
-import User from "../models/User";
+import Bookings from "../models/Bookings.js";
+import User from "../models/User.js";
 import bcrypt from "bcryptjs";
 export const getAllUsers=async(req,res,next)=>{
     let users;
@@ -86,6 +86,7 @@ export const deleteUser= async (req,res,next)=>{
     return res.status(200).json({message:"Deleted Successfully"});
 };
 
+
 export const login=async(req,res,next)=>{
     const {email,password}=req.body;
     if( !email || 
@@ -129,6 +130,7 @@ export const getBookingsOfUser=async(req,res,next)=>{
 
     return res.status(200).json({bookings})
 }
+
 export const getUser=async(req,res,next)=>{
     const id=req.params.id;
     let user;

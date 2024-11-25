@@ -1,5 +1,5 @@
 import bcyrpt from "bcryptjs";
-import Admin from "../models/Admin";
+import Admin from "../models/Admin.js";
 import jwt from "jsonwebtoken";
 
 export const getAllAdmins=async(req,res,next)=>{
@@ -21,7 +21,7 @@ export const addAdmin=async(req,res,next)=>{
     const{email, password }=req.body;
 
     let exsistingadmin;
-    if( !email || 
+    if( !email ||
         email.trim()==="" || 
         !password || 
         password.trim()==""
@@ -100,5 +100,7 @@ export const getAdmin=async(req,res,next)=>{
         return res.status(500).json({message:"Unable to get user"});
     }
 
+
+    
     return res.status(200).json({admin})
 }

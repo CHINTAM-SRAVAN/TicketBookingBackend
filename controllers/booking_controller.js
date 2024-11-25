@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
-import Bookings from "../models/Bookings";
-import Movie from "../models/Movie";
-import User from "../models/User";
+import Bookings from "../models/Bookings.js";
+import Movie from "../models/Movie.js";
+import User from "../models/User.js";
 export const getAllBookings=async(req,res,next)=>{
     
     let bookings;
@@ -113,6 +113,8 @@ export const getBookingById = async(req,res,next)=>{
     }
     return res.status(200).json({booking})
 };
+
+
 export const deleteBookingById = async(req,res,next)=>{
     const id=req.params.id;
     let booking;
